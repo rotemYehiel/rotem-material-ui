@@ -6,6 +6,7 @@ import { ButtonType } from "./components/PButton/PButton.model";
 import { ThemeColors } from "./types/themeColors";
 import PButton from "./components/PButton/PButton";
 import MyButton from "./components/MyButton/MyButoon";
+import TodoList from "./components/TodoList/TodoList";
 
 function App() {
   const pButtonRef = useRef<HTMLButtonElement>(null);
@@ -27,6 +28,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Grid2 className="App" container direction="column" rowSpacing={2}>
         <BrowserRouter>
+          <TodoList />
           <PButton
             className="custom-button"
             color={ThemeColors.Primary}
