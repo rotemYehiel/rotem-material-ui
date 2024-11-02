@@ -1,0 +1,19 @@
+$primary-color: #000000;
+$secondary-color: #ffffff;
+$danger-button: #ff4d4d;
+$primary-active-hover: #333333;
+$disable-common: #cccccc;
+$disable-common-two: #dddddd;
+$danger-button-hover: #cc0000;
+$transparent-color: #00000000;
+
+$colors: (
+  primary: $primary-color,
+  secondary: $secondary-color,
+  danger-button: $danger-button,
+  primary-active-hover: $primary-active-hover,
+  disable-common: $disable-common,
+  disable-common-two: $disable-common-two,
+  danger-button-hover: $danger-button-hover,
+  transparent: $transparent-color,
+);

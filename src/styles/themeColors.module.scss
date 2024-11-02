@@ -1,0 +1,12 @@
+@import "./variables.scss";
+
+:export {
+  primary: $primary-color;
+  secondary: $secondary-color;
+  danger-button: $danger-button;
+  primary-active-hover: $primary-active-hover;
+  disable-common: $disable-common;
+  disable-common-two: $disable-common-two;
+  danger-button-hover: $danger-button-hover;
+  transparent: $transparent-color;
+}
