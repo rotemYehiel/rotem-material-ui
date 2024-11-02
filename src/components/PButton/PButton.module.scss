@@ -1,0 +1,135 @@
+@import "../../styles/variables.scss";
+
+.btn {
+  border: none;
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
+  font-size: 0.85vw;
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+  padding: 0vw 1.1vw;
+  border-radius: 4px;
+  min-height: 1.8vw;
+  text-transform: uppercase;
+
+  @media (max-width: 1440px) {
+    padding: 0 10px;
+    gap: 7px;
+    min-height: 25px;
+    font-size: 12px;
+  }
+
+  @media (min-width: 1921px) {
+    padding: 0 21px;
+    gap: 10px;
+    min-height: 34px;
+    font-size: 16px;
+  }
+
+  &:disabled {
+    cursor: auto;
+  }
+
+  &--transparent {
+    background-color: transparent;
+    font-weight: 700;
+
+    &:hover {
+      color: map-get($colors, primary-active-hover);
+    }
+
+    &::placeholder {
+      color: map-get($colors, primary-active-hover);
+    }
+
+    &:disabled {
+      background-color: transparent;
+      color: map-get($colors, disable-common);
+
+      &:hover {
+        background-color: transparent;
+        color: map-get($colors, disable-common);
+      }
+    }
+  }
+
+  &--tertiary {
+    background-color: white;
+    border: 2px solid black;
+    font-weight: 700;
+
+    &:hover {
+      border: 2px solid map-get($colors, primary-active-hover);
+      color: map-get($colors, primary-active-hover);
+    }
+
+    &:disabled {
+      background-color: white;
+      border: 2px solid map-get($colors, disable-common);
+
+      &:hover {
+        background-color: white;
+        border: 2px solid map-get($colors, disable-common);
+        color: map-get($colors, disable-common);
+      }
+    }
+  }
+
+  &--danger {
+    background-color: map-get($colors, danger-button);
+    color: white;
+    font-weight: 700;
+
+    &:disabled {
+      opacity: 0.4;
+    }
+
+    &:hover {
+      background-color: map-get($colors, danger-button-hover);
+    }
+  }
+
+  &--primary {
+    background-color: black;
+    color: white;
+
+    &:hover {
+      background-color: map-get($colors, primary-active-hover);
+    }
+
+    &:disabled {
+      background-color: map-get($colors, disable-common-two);
+
+      &:hover {
+        background-color: map-get($colors, disable-common-two);
+      }
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    border: 2px solid map-get($colors, black);
+    font-weight: 700;
+
+    &:hover {
+      border: 2px solid map-get($colors, primary-active-hover);
+      color: map-get($colors, primary-active-hover);
+    }
+
+    &:disabled {
+      background-color: transparent;
+      border: 2px solid map-get($colors, disable-common);
+
+      &:hover {
+        background-color: transparent;
+        border: 2px solid map-get($colors, disable-common);
+        color: map-get($colors, disable-common);
+      }
+    }
+  }
+}
+
+.link {
+  text-decoration: none !important;
+}
