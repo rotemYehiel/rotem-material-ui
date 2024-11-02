@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   Container,
   Typography,
@@ -8,14 +8,18 @@ import {
   MenuItem,
   Box,
   List,
+  Pagination,
 } from "@mui/material";
 import { Todo } from "../../types/todo";
 import TodoItem from "../TodoItem/TodoItem";
+
+const ITEMS_PER_PAGE = 5;
 
 const TodoList = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTask, setNewTask] = useState("");
   const [filter, setFilter] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const savedTodos = localStorage.getItem("todos");
@@ -49,7 +53,14 @@ const TodoList = () => {
   };
 
   const deleteTodo = (id: number) => {
-    updateTodos(todos.filter((todo) => todo.id !== id));
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+    updateTodos(updatedTodos);
+
+    const totalPages = Math.ceil(updatedTodos.length / ITEMS_PER_PAGE);
+
+    if (currentPage > totalPages) {
+      setCurrentPage(totalPages);
+    }
   };
 
   const filteredTodos = todos.filter((todo) => {
@@ -67,6 +78,24 @@ const TodoList = () => {
     const sanitizedInput = sanitizeInput(e.target.value);
     setNewTask(sanitizedInput);
   };
+
+  const handlePageChange = (
+    _event: React.ChangeEvent<unknown>,
+    page: number
+  ) => {
+    setCurrentPage(page);
+  };
+
+  const pageCount = useMemo(
+    () => Math.ceil(filteredTodos.length / ITEMS_PER_PAGE),
+    [filteredTodos]
+  );
+
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const paginatedTodos = useMemo(
+    () => filteredTodos.slice(startIndex, startIndex + ITEMS_PER_PAGE),
+    [filteredTodos, startIndex]
+  );
 
   return (
     <Container maxWidth="sm">
@@ -100,9 +129,9 @@ const TodoList = () => {
           <MenuItem value="Incomplete">Incomplete</MenuItem>
         </Select>
 
-        {!!filteredTodos.length && (
+        {!!paginatedTodos.length && (
           <List>
-            {filteredTodos.map((todo) => (
+            {paginatedTodos.map((todo) => (
               <TodoItem
                 key={todo.id}
                 todo={todo}
@@ -111,6 +140,16 @@ const TodoList = () => {
               />
             ))}
           </List>
+        )}
+
+        {pageCount > 1 && (
+          <Pagination
+            count={pageCount}
+            page={currentPage}
+            onChange={handlePageChange}
+            color="primary"
+            sx={{ mt: 2, display: "flex", justifyContent: "center" }}
+          />
         )}
       </Box>
     </Container>
