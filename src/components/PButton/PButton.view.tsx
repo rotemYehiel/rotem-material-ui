@@ -28,8 +28,6 @@ const PButtonView = ({
   onClick,
   children,
 }: React.PropsWithChildren<Props>): JSX.Element => {
-  // console.log({ classes, ThemeColors });
-
   return to && !disabled ? (
     <Link className={classes["link"]} to={to}>
       <button

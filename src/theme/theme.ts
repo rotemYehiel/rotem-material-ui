@@ -7,6 +7,7 @@ import {
   TertiaryPaletteOptions,
   TransparentPaletteOptions,
 } from "../interfaces/themeInterfaces";
+import { ThemeColors } from "../types/themeColors";
 
 declare module "@mui/material/styles" {
   interface PaletteOptions {
@@ -79,4 +80,49 @@ export const palette: PaletteOptions = {
   },
 };
 
-export const theme = createTheme({ palette });
+declare module "@mui/material/Button" {
+  interface ButtonPropsColorOverrides {
+    inherit: true;
+    primary: true;
+    secondary: true;
+    danger: true;
+    tertiary: true;
+    transparent: true;
+  }
+}
+
+declare module "@mui/material/Button" {
+  interface ButtonExtraProps {
+    color?: ThemeColors;
+  }
+}
+
+export const theme = createTheme({
+  palette,
+  typography: {
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontSize: 16,
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          boxShadow: "none",
+          "&:hover": {
+            boxShadow: "none",
+            cursor: "auto",
+            " --variant-textBg": "none",
+            "--variant-outlinedBorder": "none",
+            "--variant-outlinedBg": "none",
+          },
+          "&:active": {
+            boxShadow: "none",
+          },
+        },
+      },
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
+  },
+});
