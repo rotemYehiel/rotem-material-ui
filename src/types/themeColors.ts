@@ -1,7 +1,6 @@
-export enum ThemeColors {
-  Primary = "primary",
-  Secondary = "secondary",
-  Danger = "danger",
-  Tertiary = "tertiary",
-  Transparent = "transparent",
-}
+export type ThemeColors =
+  | "primary"
+  | "secondary"
+  | "danger"
+  | "tertiary"
+  | "transparent";

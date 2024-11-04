@@ -39,7 +39,7 @@ function App() {
         <TodoList />
         <PButton
           className="custom-button"
-          color={ThemeColors.Primary}
+          color={theme}
           disabled={false}
           type={ButtonType.Submit}
           to="/home"
@@ -50,7 +50,7 @@ function App() {
         </PButton>
         <MyButton
           className="custom-button"
-          color={ThemeColors.Primary}
+          color={theme}
           disabled={false}
           type={ButtonType.Submit}
           to="/home"

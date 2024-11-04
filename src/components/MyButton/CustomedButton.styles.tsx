@@ -1,6 +1,7 @@
 import { styled } from "@mui/material/styles";
 import { Button, ButtonProps } from "@mui/material";
 import { ThemeColors } from "../../types/themeColors";
+import { THEME_COLORS } from "../../constant/themeColors";
 
 const CustomedButton = styled(Button)<ButtonProps>(({ theme, color }) => ({
   border: "none",
@@ -33,7 +34,7 @@ const CustomedButton = styled(Button)<ButtonProps>(({ theme, color }) => ({
     cursor: "auto",
   },
 
-  ...(color === ThemeColors.Transparent && {
+  ...(color === THEME_COLORS.TRANSPARENT && {
     backgroundColor: theme.palette.myButton?.main,
     fontWeight: 700,
 
@@ -56,7 +57,7 @@ const CustomedButton = styled(Button)<ButtonProps>(({ theme, color }) => ({
     },
   }),
 
-  ...(color === ThemeColors.Tertiary && {
+  ...(color === THEME_COLORS.TERTIARY && {
     backgroundColor: theme.palette.myButton?.main,
     border: `2px solid ${theme.palette.myButton?.secondary}`,
     fontWeight: 700,
@@ -78,7 +79,7 @@ const CustomedButton = styled(Button)<ButtonProps>(({ theme, color }) => ({
     },
   }),
 
-  ...(color === ThemeColors.Danger && {
+  ...(color === THEME_COLORS.DANGER && {
     backgroundColor: theme.palette.myButton?.dangerButton,
     color: theme.palette.myButton?.main,
     fontWeight: 700,
@@ -92,7 +93,7 @@ const CustomedButton = styled(Button)<ButtonProps>(({ theme, color }) => ({
     },
   }),
 
-  ...(color === ThemeColors.Primary && {
+  ...(color === THEME_COLORS.PRIMARY && {
     backgroundColor: theme.palette.myButton?.main,
     color: theme.palette.myButton?.secondary,
 
@@ -109,7 +110,7 @@ const CustomedButton = styled(Button)<ButtonProps>(({ theme, color }) => ({
     },
   }),
 
-  ...(color === ThemeColors.Secondary && {
+  ...(color === THEME_COLORS.SECONDARY && {
     backgroundColor: theme.palette.myButton?.main,
     border: `2px solid ${theme.palette.myButton?.secondary}`,
     fontWeight: 700,

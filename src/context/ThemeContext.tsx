@@ -7,18 +7,12 @@ import {
   transparentTheme,
 } from "../theme/themes";
 import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
+import { ThemeColors } from "../types/themeColors";
 
 interface ThemeContextType {
-  theme: ThemeType;
-  setTheme: (theme: ThemeType) => void;
+  theme: ThemeColors;
+  setTheme: (theme: ThemeColors) => void;
 }
-
-type ThemeType =
-  | "primary"
-  | "secondary"
-  | "danger"
-  | "tertiary"
-  | "transparent";
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
@@ -32,7 +26,7 @@ export const useThemeContext = (): ThemeContextType => {
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [theme, setTheme] = useState<ThemeType>("primary");
+  const [theme, setTheme] = useState<ThemeColors>("primary");
 
   const currentTheme =
     theme === "primary"
