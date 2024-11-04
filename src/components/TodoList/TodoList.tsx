@@ -91,7 +91,7 @@ const TodoList = () => {
     [filteredTodos]
   );
 
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const startIndex = currentPage === 1 ? 0 : (currentPage - 1) * ITEMS_PER_PAGE;
   const paginatedTodos = useMemo(
     () => filteredTodos.slice(startIndex, startIndex + ITEMS_PER_PAGE),
     [filteredTodos, startIndex]
