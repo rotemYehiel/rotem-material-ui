@@ -34,53 +34,53 @@ const CustomedButton = styled(Button)<ButtonProps>(({ theme, color }) => ({
   },
 
   ...(color === ThemeColors.Transparent && {
-    backgroundColor: theme.palette.transparent?.main,
+    backgroundColor: theme.palette.myButton?.main,
     fontWeight: 700,
 
     "&:hover": {
-      color: theme.palette.transparent?.primaryActiveHover,
+      color: theme.palette.myButton?.primaryActiveHover,
     },
 
     "&::placeholder": {
-      color: theme.palette.transparent?.primaryActiveHover,
+      color: theme.palette.myButton?.primaryActiveHover,
     },
 
     "&:disabled": {
-      backgroundColor: theme.palette.transparent?.main,
-      color: theme.palette.transparent?.disableCommon,
+      backgroundColor: theme.palette.myButton?.main,
+      color: theme.palette.myButton?.disableCommon,
 
       "&:hover": {
-        backgroundColor: theme.palette.transparent?.main,
-        color: theme.palette.transparent?.disableCommon,
+        backgroundColor: theme.palette.myButton?.main,
+        color: theme.palette.myButton?.disableCommon,
       },
     },
   }),
 
   ...(color === ThemeColors.Tertiary && {
-    backgroundColor: theme.palette.tertiary?.main,
-    border: `2px solid ${theme.palette.tertiary?.seconed}`,
+    backgroundColor: theme.palette.myButton?.main,
+    border: `2px solid ${theme.palette.myButton?.secondary}`,
     fontWeight: 700,
 
     "&:hover": {
-      border: `2px solid ${theme.palette.tertiary?.primaryActiveHover}`,
-      color: theme.palette.tertiary?.primaryActiveHover,
+      border: `2px solid ${theme.palette.myButton?.primaryActiveHover}`,
+      color: theme.palette.myButton?.primaryActiveHover,
     },
 
     "&:disabled": {
-      backgroundColor: theme.palette.tertiary?.seconed,
-      border: `2px solid ${theme.palette.tertiary?.disableCommon}`,
+      backgroundColor: theme.palette.myButton?.secondary,
+      border: `2px solid ${theme.palette.myButton?.disableCommon}`,
 
       "&:hover": {
-        backgroundColor: theme.palette.tertiary?.main,
-        border: `2px solid ${theme.palette.tertiary?.disableCommon}`,
-        color: theme.palette.tertiary?.disableCommon,
+        backgroundColor: theme.palette.myButton?.main,
+        border: `2px solid ${theme.palette.myButton?.disableCommon}`,
+        color: theme.palette.myButton?.disableCommon,
       },
     },
   }),
 
   ...(color === ThemeColors.Danger && {
-    backgroundColor: theme.palette.danger?.dangerButton,
-    color: theme.palette.danger?.contrastText,
+    backgroundColor: theme.palette.myButton?.dangerButton,
+    color: theme.palette.myButton?.main,
     fontWeight: 700,
 
     "&:disabled": {
@@ -88,44 +88,44 @@ const CustomedButton = styled(Button)<ButtonProps>(({ theme, color }) => ({
     },
 
     "&:hover": {
-      backgroundColor: theme.palette.danger?.dangerButtonHover,
+      backgroundColor: theme.palette.myButton?.dangerButtonHover,
     },
   }),
 
   ...(color === ThemeColors.Primary && {
-    backgroundColor: theme.palette.primaryButton?.main,
-    color: theme.palette.primaryButton?.seconed,
+    backgroundColor: theme.palette.myButton?.main,
+    color: theme.palette.myButton?.secondary,
 
     "&:hover": {
-      backgroundColor: theme.palette.primaryButton?.primaryActiveHover,
+      backgroundColor: theme.palette.myButton?.primaryActiveHover,
     },
 
     "&:disabled": {
-      backgroundColor: theme.palette.primaryButton?.disableCommonTwo,
+      backgroundColor: theme.palette.myButton?.disableCommonTwo,
 
       "&:hover": {
-        backgroundColor: theme.palette.primaryButton?.disableCommonTwo,
+        backgroundColor: theme.palette.myButton?.disableCommonTwo,
       },
     },
   }),
 
   ...(color === ThemeColors.Secondary && {
-    backgroundColor: theme.palette.secondaryButton?.main,
-    border: `2px solid ${theme.palette.secondaryButton?.seconed}`,
+    backgroundColor: theme.palette.myButton?.main,
+    border: `2px solid ${theme.palette.myButton?.secondary}`,
     fontWeight: 700,
 
     "&:hover": {
-      border: `2px solid ${theme.palette.secondaryButton?.primaryActiveHover}`,
-      color: theme.palette.secondaryButton?.primaryActiveHover,
+      border: `2px solid ${theme.palette.myButton?.primaryActiveHover}`,
+      color: theme.palette.myButton?.primaryActiveHover,
     },
 
     "&:disabled": {
-      backgroundColor: theme.palette.secondaryButton?.main,
+      backgroundColor: theme.palette.myButton?.main,
 
       "&:hover": {
-        backgroundColor: theme.palette.secondaryButton?.main,
-        border: `2px solid ${theme.palette.secondaryButton?.disableCommon}`,
-        color: theme.palette.secondaryButton?.disableCommon,
+        backgroundColor: theme.palette.myButton?.main,
+        border: `2px solid ${theme.palette.myButton?.disableCommon}`,
+        color: theme.palette.myButton?.disableCommon,
       },
     },
   }),
