@@ -19,6 +19,10 @@ type Props = {
 
 const CustomedLink = styled(Link)<ButtonProps>(() => ({
   textDecoration: "none",
+  color: "inherit",
+  "&:link, &:visited, &:hover, &:active": {
+    color: "inherit",
+  },
 }));
 
 const MyButton = (props: React.PropsWithChildren<Props>): JSX.Element => {
