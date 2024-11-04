@@ -48,26 +48,4 @@ export const theme = createTheme({
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     fontSize: 16,
   },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          boxShadow: "none",
-          "&:hover": {
-            boxShadow: "none",
-            cursor: "auto",
-            " --variant-textBg": "none",
-            "--variant-outlinedBorder": "none",
-            "--variant-outlinedBg": "none",
-          },
-          "&:active": {
-            boxShadow: "none",
-          },
-        },
-      },
-      defaultProps: {
-        disableRipple: true,
-      },
-    },
-  },
 });

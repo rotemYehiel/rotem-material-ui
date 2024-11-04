@@ -29,6 +29,8 @@ const MyButton = (props: React.PropsWithChildren<Props>): JSX.Element => {
   return props.to && !props.disabled ? (
     <CustomedLink className="link" to={props.to}>
       <CustomedButton
+        disableElevation
+        disableRipple
         variant="contained"
         color={props.color}
         disabled={props.disabled}

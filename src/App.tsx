@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Grid2, useTheme } from "@mui/material";
 import { ButtonType } from "./components/PButton/PButton.model";
-import { ThemeColors } from "./types/themeColors";
 import PButton from "./components/PButton/PButton";
 import MyButton from "./components/MyButton/MyButoon";
 import TodoList from "./components/TodoList/TodoList";
