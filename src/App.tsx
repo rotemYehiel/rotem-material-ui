@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { BrowserRouter } from "react-router-dom";
-import { Grid2, ThemeProvider, useTheme, useThemeProps } from "@mui/material";
-import { theme } from "./theme/theme";
+import { Grid2, useTheme } from "@mui/material";
 import { ButtonType } from "./components/PButton/PButton.model";
 import { ThemeColors } from "./types/themeColors";
 import PButton from "./components/PButton/PButton";
